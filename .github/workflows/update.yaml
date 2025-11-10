@@ -1,0 +1,30 @@
+name: Update
+on:
+  schedule:
+    - cron: 45 12 * * 1
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: update
+jobs:
+  pull:
+    name: Update
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Install
+        run: npm install --ignore-scripts
+      - name: Update
+        run: node scripts/update.js
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: update
+          commit-message: Update packages
+          title: Update packages
+          body: This is an automated pull request to update packages.
+          delete-branch: true

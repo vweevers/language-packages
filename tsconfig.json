@@ -1,0 +1,6 @@
+{
+  "extends": "@voxpelli/tsconfig/node22.json",
+  "compilerOptions": {
+    "noImplicitAny": false
+  }
+}
