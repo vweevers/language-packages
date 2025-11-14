@@ -194,8 +194,16 @@ async function getLatest (packageName, publishers) {
       fullMetadata: true
     })
 
+    // Doesn't exist in types; might be an undocumented property. Let's keep
+    // checking that it's present.
+    const _time = /** @type {number} */ (manifest['_time'])
+
+    if (!_time) {
+      throw new Error('Expected manifest to have a _time property')
+    }
+
     const publisher = manifest._npmUser.name
-    const time = new Date(manifest._time).valueOf()
+    const time = new Date(_time).valueOf()
     const ageInDays = (Date.now() - time) / 1e3 / 60 / 60 / 24
 
     // Verify ownership changes
@@ -205,6 +213,7 @@ async function getLatest (packageName, publishers) {
 
     // Apply a delay before auto-updating
     if (ageInDays < 7) {
+      // @ts-expect-error
       manifest = null
     }
 
