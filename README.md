@@ -4,7 +4,7 @@
 
 [![npm status](http://img.shields.io/npm/v/language-packages.svg)](https://www.npmjs.org/package/language-packages)
 [![node](https://img.shields.io/node/v/language-packages.svg)](https://www.npmjs.org/package/language-packages)
-![Test](https://github.com/vweevers/language-packages/workflows/Test/badge.svg?branch=main)
+[![Test](https://img.shields.io/github/actions/workflow/status/vweevers/language-packages/test.yml?branch=main\&label=test)](https://github.com/vweevers/language-packages/actions/workflows/test.yml)
 [![Standard](https://img.shields.io/badge/standard-informational?logo=javascript\&logoColor=fff)](https://standardjs.com)
 [![Common Changelog](https://common-changelog.org/badge.svg)](https://common-changelog.org)
 
