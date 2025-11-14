@@ -1,6 +1,6 @@
 {
   "name": "language-packages",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Download Hunspell dictionaries and Snowball stemmers on demand",
   "license": "MIT",
   "author": "Vincent Weevers",
